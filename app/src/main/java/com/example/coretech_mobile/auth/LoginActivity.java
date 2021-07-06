@@ -1,4 +1,4 @@
-package com.example.myapplication.auth;
+package com.example.coretech_mobile.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.coretech_mobile.R;
-import com.example.myapplication.calendar.CalendarActivity;
-import com.example.myapplication.model.MyCallback;
-import com.example.myapplication.model.Status;
-import com.example.myapplication.model.User;
-import com.example.myapplication.product.ProductActivity;
+import com.example.coretech_mobile.calendar.CalendarActivity;
+import com.example.coretech_mobile.model.MyCallback;
+import com.example.coretech_mobile.model.Status;
+import com.example.coretech_mobile.model.User;
+import com.example.coretech_mobile.product.ProductActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;

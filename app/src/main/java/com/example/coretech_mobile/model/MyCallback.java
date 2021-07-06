@@ -1,7 +1,4 @@
-package com.example.myapplication.model;
-
-import com.example.myapplication.model.Status;
-import com.example.myapplication.model.User;
+package com.example.coretech_mobile.model;
 
 public class MyCallback {
 

@@ -1,4 +1,4 @@
-package com.example.myapplication.model;
+package com.example.coretech_mobile.model;
 
 public class User {
 

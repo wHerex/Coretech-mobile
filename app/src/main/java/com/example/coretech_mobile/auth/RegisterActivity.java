@@ -1,4 +1,4 @@
-package com.example.myapplication.auth;
+package com.example.coretech_mobile.auth;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,9 +8,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.coretech_mobile.R;
-import com.example.myapplication.model.MyCallback;
-import com.example.myapplication.model.User;
-import com.example.myapplication.product.ProductApiCall;
+import com.example.coretech_mobile.model.MyCallback;
+import com.example.coretech_mobile.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;

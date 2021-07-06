@@ -1,4 +1,4 @@
-package com.example.myapplication.product;
+package com.example.coretech_mobile.product;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.coretech_mobile.R;
-import com.example.myapplication.model.Product;
+import com.example.coretech_mobile.model.Product;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder>{

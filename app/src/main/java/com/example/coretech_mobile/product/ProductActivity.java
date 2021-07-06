@@ -1,13 +1,13 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.coretech_mobile.product;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.coretech_mobile.R;
-import com.example.myapplication.model.Product;
-import com.example.myapplication.product.ProductApiCall;
+import com.example.coretech_mobile.model.Product;
 
 import java.util.List;
 
@@ -17,29 +17,26 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class ProductActivity extends AppCompatActivity{
+
+    RecyclerView recyclerView;
 
     private TextView textView;
     private Product product;
-
+    MyRecyclerViewAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        textView = findViewById(R.id.textview);
-
+        setContentView(R.layout.recycler_view);
+        recyclerView = findViewById(R.id.recyclerView);
+        //textView = findViewById(R.id.textview);
         ProductApiCall productApiCall = getProductApiCall();
-
         //product = new Product(1250);
-
         getProduct(productApiCall);
-
         //saveProduct(productApiCall, product);
 
     }
-
 
 
     private ProductApiCall getProductApiCall() {
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         productApiCall.saveProduct(product).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                textView.setText(response.toString());
+                //textView.setText(response.toString());
             }
 
             @Override
@@ -75,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         getProductCall.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if(response.code() != 200){
+                /*if(response.code() != 200){
                     textView.setText("Check the connection");
                     return;
                 }
@@ -86,7 +83,11 @@ public class MainActivity extends AppCompatActivity {
                     json += "ID= " + p.getId() +
                             "  price= " + p.getPrice() + "\n";
                 }
-                textView.append(json);
+                textView.append(json);*/
+
+                MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(getApplicationContext(), response.body());
+                recyclerView.setAdapter(myRecyclerViewAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
             }
 
@@ -96,4 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

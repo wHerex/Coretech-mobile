@@ -1,7 +1,7 @@
-package com.example.myapplication.auth;
+package com.example.coretech_mobile.auth;
 
-import com.example.myapplication.model.MyCallback;
-import com.example.myapplication.model.User;
+import com.example.coretech_mobile.model.MyCallback;
+import com.example.coretech_mobile.model.User;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

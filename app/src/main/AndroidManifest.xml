@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name="com.example.myapplication.calendar.CalendarActivity" />
-        <activity android:name="com.example.myapplication.product.ProductActivity" />
-        <activity android:name="com.example.myapplication.auth.LoginActivity">
+        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".product.ProductActivity" />
+        <activity android:name=".auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

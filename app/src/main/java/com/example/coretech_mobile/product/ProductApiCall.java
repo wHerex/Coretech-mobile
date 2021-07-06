@@ -1,6 +1,6 @@
-package com.example.myapplication.product;
+package com.example.coretech_mobile.product;
 
-import com.example.myapplication.model.Product;
+import com.example.coretech_mobile.model.Product;
 
 import java.util.List;
 

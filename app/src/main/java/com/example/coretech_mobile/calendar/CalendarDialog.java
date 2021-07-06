@@ -1,4 +1,4 @@
-package com.example.myapplication.calendar;
+package com.example.coretech_mobile.calendar;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

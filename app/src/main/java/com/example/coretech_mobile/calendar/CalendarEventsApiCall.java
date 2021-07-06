@@ -1,7 +1,5 @@
-package com.example.myapplication.calendar;
+package com.example.coretech_mobile.calendar;
 
-
-import com.example.myapplication.model.Product;
 
 import java.util.List;
 
