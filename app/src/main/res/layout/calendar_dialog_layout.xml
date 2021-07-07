@@ -21,7 +21,7 @@
         android:layout_below="@+id/subject"/>
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/calendar_description"
         android:hint="Opis wydarzenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="time"
-        android:layout_below="@+id/description"/>
+        android:layout_below="@+id/calendar_description"/>
 
 
 

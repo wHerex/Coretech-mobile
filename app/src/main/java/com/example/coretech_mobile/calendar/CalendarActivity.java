@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.CalendarView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.coretech_mobile.R;
+import com.example.coretech_mobile.model.Event;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;

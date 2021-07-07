@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.coretech_mobile.R;
+import com.example.coretech_mobile.model.Event;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -31,10 +32,10 @@ public class CalendarDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.layout_dialog, null);
+        View view = inflater.inflate(R.layout.calendar_dialog_layout, null);
 
         editTextSubject = view.findViewById(R.id.subject);
-        editTextDescription = view.findViewById(R.id.description);
+        editTextDescription = view.findViewById(R.id.calendar_description);
         editTextEventLength = view.findViewById(R.id.event_length);
         editTextStartDateTime = view.findViewById(R.id.start_date_time);
         initHourPicker(view);

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/product_name"
+        android:hint="Nazwa produktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/product_description"
+        android:hint="Opis produktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/product_name"/>
+
+    <EditText
+        android:id="@+id/price"
+        android:hint="Cena produktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="number"
+        android:layout_below="@+id/product_description"/>
+
+    <EditText
+        android:id="@+id/quantity"
+        android:hint="Ilosc produktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/price"/>
+
+    <EditText
+        android:id="@+id/product_id"
+        android:hint="Ilosc produktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="invisible"
+        android:layout_below="@+id/quantity"/>
+
+
+
+
+</RelativeLayout>

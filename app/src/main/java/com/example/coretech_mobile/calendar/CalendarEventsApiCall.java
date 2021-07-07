@@ -1,6 +1,8 @@
 package com.example.coretech_mobile.calendar;
 
 
+import com.example.coretech_mobile.model.Event;
+
 import java.util.List;
 
 import retrofit2.Call;

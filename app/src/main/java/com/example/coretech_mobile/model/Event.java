@@ -1,4 +1,4 @@
-package com.example.coretech_mobile.calendar;
+package com.example.coretech_mobile.model;
 
 public class Event {
 
