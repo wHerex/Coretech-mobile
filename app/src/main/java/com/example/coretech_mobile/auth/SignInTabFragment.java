@@ -1,9 +1,10 @@
 package com.example.coretech_mobile.auth;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,30 +15,33 @@ import com.example.coretech_mobile.model.Status;
 import com.example.coretech_mobile.model.User;
 import com.example.coretech_mobile.product.ProductActivity;
 
+import androidx.fragment.app.Fragment;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignInTabFragment extends Fragment {
 
     AuthApiCall authApiCall;
 
     EditText loginEditText, passwordEditText;
-    Button loginButton;
+    Button signInButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.signin_tab_fragment, container, false);
 
-        loginButton = findViewById(R.id.loginTestButton);
-        loginEditText = findViewById(R.id.loginEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
-        loginButton.setOnClickListener(c -> loginInto());
+        signInButton = root.findViewById(R.id.signIn_signIn_button);
+        loginEditText = root.findViewById(R.id.signIn_login_editText);
+        passwordEditText = root.findViewById(R.id.signIn_password_editText);
+        signInButton.setOnClickListener(c -> loginInto());
 
         authApiCall = getAuthApiCall();
+
+        return root;
     }
 
     private void loginInto() {
@@ -72,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startIntent(Class intentClass) {
-        Intent intent = new Intent(this, intentClass);
+        Intent intent = new Intent(getView().getContext(), intentClass);
         startActivity(intent);
     }
 

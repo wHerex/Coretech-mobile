@@ -21,6 +21,7 @@ public class AuthActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.auth_tabLayout);
         viewPager = findViewById(R.id.auth_viewPager);
 
+        tabLayout.addTab(tabLayout.newTab().setText("Sign in"));
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
 
         final AuthPagerAdapter adapter = new AuthPagerAdapter(getSupportFragmentManager(), this, tabLayout.getTabCount());
