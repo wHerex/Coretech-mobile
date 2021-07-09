@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.coretech_mobile.R;
 import com.example.coretech_mobile.calendar.CalendarActivity;
@@ -47,6 +48,16 @@ public class SignInTabFragment extends Fragment {
     private void loginInto() {
         String login = loginEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+        if(login.equals("")) {
+            Toast.makeText(getView().getContext(), "Missing login!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(password.equals("")) {
+            Toast.makeText(getView().getContext(), "Missing password!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         User user = new User(login, password);
         authApiCall.login(user).enqueue(new Callback<MyCallback>() {
             @Override
