@@ -14,7 +14,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="4dp"
+        app:tabIndicatorGravity="top"
+        app:tabIndicatorColor="@color/white"
+        app:tabRippleColor="@color/gray"
+        app:tabBackground="@drawable/tab_bg"
+        app:tabTextColor="@color/gray_light"
+        app:tabSelectedTextColor="@color/white" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/auth_viewPager"
@@ -26,6 +34,6 @@
         app:layout_constraintHeight_percent="0.9"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auth_tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/auth_tabLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
