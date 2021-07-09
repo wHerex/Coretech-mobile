@@ -41,7 +41,7 @@ public class CalendarDialog extends AppCompatDialogFragment {
         initHourPicker(view);
 
         builder.setView(view)
-                .setTitle("Rezerwacja")
+                .setTitle("Reservation")
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     Toast.makeText(getContext(),"Cancel Pressed", Toast.LENGTH_LONG).show();
 

@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".calendar.CalendarActivity"
+            android:label="Calendar"/>
         <activity android:name=".product.ProductActivity"
             android:label="Products"/>
-        <activity android:name=".dashboard.DashboardActivity" />
+        <activity android:name=".dashboard.DashboardActivity"
+            android:label="Dashboard"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -15,7 +15,7 @@ public class CalerndarDialogBusy extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Wybrany termin jest zajęty")
+        builder.setTitle("The selected date is already taken")
         .setPositiveButton("Ok" ,(dialog, which) -> {
 
         });

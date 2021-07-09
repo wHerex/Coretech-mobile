@@ -6,14 +6,14 @@
 
     <EditText
         android:id="@+id/subject"
-        android:hint="Temat rezerwacji"
+        android:hint="Topic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <EditText
         android:id="@+id/event_length"
-        android:hint="Czas trwania(w godzinach)"
+        android:hint="Duration (hours)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,7 +22,7 @@
 
     <EditText
         android:id="@+id/calendar_description"
-        android:hint="Opis wydarzenia"
+        android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/start_date_time"
-        android:hint="Data rozpoczęcia"
+        android:hint="Start date time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
