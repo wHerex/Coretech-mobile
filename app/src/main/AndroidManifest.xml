@@ -14,7 +14,7 @@
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".product.ProductActivity" />
         <activity android:name=".dashboard.DashboardActivity" />
-        <activity android:name=".auth.LoginActivity">
+        <activity android:name=".auth.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
