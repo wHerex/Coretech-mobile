@@ -6,14 +6,14 @@
 
     <EditText
         android:id="@+id/product_name"
-        android:hint="Nazwa produktu"
+        android:hint="Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <EditText
         android:id="@+id/product_description"
-        android:hint="Opis produktu"
+        android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,7 +22,7 @@
 
     <EditText
         android:id="@+id/price"
-        android:hint="Cena produktu"
+        android:hint="Price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/quantity"
-        android:hint="Ilosc produktu"
+        android:hint="Quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,7 +41,6 @@
 
     <EditText
         android:id="@+id/product_id"
-        android:hint="Ilosc produktu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

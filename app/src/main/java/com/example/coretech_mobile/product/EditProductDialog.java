@@ -31,7 +31,7 @@ public class EditProductDialog extends AppCompatDialogFragment {
         initAndSetIfNonNullEditTexts(view);
 
         builder.setView(view)
-                .setTitle("Nowy Produkt")
+                .setTitle("New product")
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     Toast.makeText(getContext(), "Cancel Pressed", Toast.LENGTH_LONG).show();
 

@@ -33,7 +33,7 @@ public class NewProductDialog extends AppCompatDialogFragment {
         productPrice = view.findViewById(R.id.price);
         productQuantity = view.findViewById(R.id.quantity);
         builder.setView(view)
-                .setTitle("Nowy Produkt")
+                .setTitle("New product")
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     Toast.makeText(getContext(), "Cancel Pressed", Toast.LENGTH_LONG).show();
 

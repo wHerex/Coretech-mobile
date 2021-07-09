@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
         <activity android:name=".calendar.CalendarActivity" />
-        <activity android:name=".product.ProductActivity" />
+        <activity android:name=".product.ProductActivity"
+            android:label="Products"/>
         <activity android:name=".dashboard.DashboardActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

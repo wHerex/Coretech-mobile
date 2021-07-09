@@ -11,6 +11,7 @@
     <color name="cyan">#FF00FFFF</color>
     <color name="blue_midnight">#FF191970</color>
     <color name="green">#FF32CD32</color>
+    <color name="green_dark">#FF008000</color>
     <color name="violet">#FFEE82EE</color>
     <color name="silver">#FFC0C0C0</color>
     <color name="gray_light">#FF808080</color>
