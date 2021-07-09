@@ -3,12 +3,12 @@ package com.example.coretech_mobile.auth;
 import android.os.Bundle;
 
 import com.example.coretech_mobile.R;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class AuthActivity extends AppCompatActivity {
+public class AuthActivity extends FragmentActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;

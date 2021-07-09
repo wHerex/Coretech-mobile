@@ -1,98 +1,64 @@
 package com.example.coretech_mobile;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
-import com.example.coretech_mobile.model.Product;
-import com.example.coretech_mobile.product.ProductApiCall;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class MainActivity extends AppCompatActivity {
-
-    private TextView textView;
-    private Product product;
-
+public class MainActivity extends FragmentActivity {
+    private static final int NUM_PAGES = 2;
+    private ViewPager2 viewPager;
+    private FragmentStateAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textview);
-
-        ProductApiCall productApiCall = getProductApiCall();
-
-        //product = new Product(1250);
-
-        getProduct(productApiCall);
-
-        //saveProduct(productApiCall, product);
-
+        viewPager = findViewById(R.id.main_pager);
+        pagerAdapter = new MainPagerAdapter(this);
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.setCurrentItem(1, false);
+        viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
     }
 
-
-
-    private ProductApiCall getProductApiCall() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://coretech-app.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        return retrofit.create(ProductApiCall.class);
+    @Override
+    public void onBackPressed() {
+        if (viewPager.getCurrentItem() == 1) {
+            super.onBackPressed();
+        } else {
+            viewPager.setCurrentItem(1);
+        }
     }
 
-    private void saveProduct(ProductApiCall productApiCall, Product product) {
-        productApiCall.saveProduct(product).enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                textView.setText(response.toString());
-            }
-
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                //textView.setText("Request failed save Product" + t);
-
-            }
-        });
+    public void setPagerItem(int itemNumber) {
+        viewPager.setCurrentItem(itemNumber, true);
     }
 
-    private void getProduct(ProductApiCall productApiCall) {
-        Call<List<Product>> getProductCall = productApiCall.getProduct();
-        getProductCallEnqueue(getProductCall);
-    }
+    private class MainPagerAdapter extends FragmentStateAdapter {
+        public MainPagerAdapter(FragmentActivity fa) {
+            super(fa);
+        }
 
-    private void getProductCallEnqueue(Call<List<Product>> getProductCall) {
-        getProductCall.enqueue(new Callback<List<Product>>() {
-            @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if(response.code() != 200){
-                    textView.setText("Check the connection");
-                    return;
-                }
-
-                String json = "";
-
-                for(Product p : response.body()){
-                    json += "ID= " + p.getId() +
-                            "  price= " + p.getPrice() + "\n";
-                }
-                textView.append(json);
-
+        @Override
+        public Fragment createFragment(int position) {
+            switch (position) {
+                case 0:
+                    InfoFragment infoFragment = new InfoFragment();
+                    return infoFragment;
+                case 1:
+                    MainFragment mainFragment = new MainFragment();
+                    return mainFragment;
+                default:
+                    return null;
             }
+        }
 
-            @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
-                textView.append("Request failed getProduct " + t);
-            }
-        });
+        @Override
+        public int getItemCount() {
+            return NUM_PAGES;
+        }
     }
 }
