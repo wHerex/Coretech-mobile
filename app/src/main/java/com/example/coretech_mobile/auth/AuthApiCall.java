@@ -17,6 +17,4 @@ public interface AuthApiCall {
     @POST("users/register")
     Call<MyCallback> register(@Body User user);
 
-    @GET("users/{login}")
-    User getPrivilegeByLogin(@Path("login") String login);
 }
