@@ -13,13 +13,14 @@
         android:theme="@style/Theme.AppCompat">
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".product.ProductActivity" />
-        <activity android:name=".auth.AuthActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".auth.AuthActivity" />
     </application>
 
 </manifest>
