@@ -25,7 +25,7 @@
             <Button
                 android:id="@+id/delete_button"
                 android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_height="35dp"
                 android:background="@drawable/product_del_button_bg"
                 android:text="X"
                 android:textColor="@color/white"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textColor="@color/white"
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintBottom_toBottomOf="parent"
