@@ -1,5 +1,7 @@
 package com.example.coretech_mobile.model;
 
+import java.util.Set;
+
 public class Event {
 
     private String id;
@@ -7,23 +9,26 @@ public class Event {
     private String startDateTime;
     private long eventLength;
     private String eventDescription;
+    private String ownerLogin;
 
     public Event() {
     }
 
-    public Event(String id, String subject, String startDateTime, long eventLength, String eventDescription) {
+    public Event(String subject, String startDateTime, long eventLength, String eventDescription, String ownerLogin) {
+        this.subject = subject;
+        this.startDateTime = startDateTime;
+        this.eventLength = eventLength;
+        this.eventDescription = eventDescription;
+        this.ownerLogin = ownerLogin;
+    }
+
+    public Event(String id, String subject, String startDateTime, long eventLength, String eventDescription, String ownerLogin) {
         this.id = id;
         this.subject = subject;
         this.startDateTime = startDateTime;
         this.eventLength = eventLength;
         this.eventDescription = eventDescription;
-    }
-
-    public Event(String subject, String startDateTime, long eventLength, String eventDescription) {
-        this.subject = subject;
-        this.startDateTime = startDateTime;
-        this.eventLength = eventLength;
-        this.eventDescription = eventDescription;
+        this.ownerLogin = ownerLogin;
     }
 
     public String getId() {

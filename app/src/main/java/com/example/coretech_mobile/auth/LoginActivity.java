@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.example.coretech_mobile.R;
 import com.example.coretech_mobile.calendar.CalendarActivity;
+import com.example.coretech_mobile.dashboard.DashboardActivity;
 import com.example.coretech_mobile.model.MyCallback;
 import com.example.coretech_mobile.model.Status;
 import com.example.coretech_mobile.model.User;
@@ -51,10 +52,10 @@ public class LoginActivity extends AppCompatActivity {
                     String privilege = response.body().getUser().getPrivilege();
                     switch (privilege) {
                         case "USER":
-                            startIntent(CalendarActivity.class);
+                            startIntent(DashboardActivity.class, login);
                             break;
                         case "ADMIN":
-                            startIntent(ProductActivity.class);
+                            startIntent(ProductActivity.class, login);
                             break;
                         default:
                             System.out.println("DEFAULT");
@@ -71,8 +72,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void startIntent(Class intentClass) {
+    private void startIntent(Class intentClass, String login) {
         Intent intent = new Intent(this, intentClass);
+        intent.putExtra("login", login);
         startActivity(intent);
     }
 

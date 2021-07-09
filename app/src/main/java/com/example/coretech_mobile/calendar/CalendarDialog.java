@@ -49,12 +49,13 @@ public class CalendarDialog extends AppCompatDialogFragment {
                 .setPositiveButton("Ok", (dialog, which) -> {
                     Toast.makeText(getContext(),"Ok Pressed", Toast.LENGTH_LONG).show();
                     //String date = getArguments().getString("date");
+                    String login = getArguments().getString("login");
                     String subject = editTextSubject.getText().toString();
                     String eventDescription = editTextDescription.getText().toString();
                     Long eventLength = Long.parseLong(editTextEventLength.getText().toString());
                     //Long startDateTime = Long.parseLong(editTextStartDateTime.getText().toString());
 
-                    Event event = new Event(subject, LocalDate.now().toString(), eventLength, eventDescription);
+                    Event event = new Event(subject, LocalDate.now().toString(), eventLength, eventDescription, login);
                     calendarDialogListener.saveEvent(event);
                 });
 

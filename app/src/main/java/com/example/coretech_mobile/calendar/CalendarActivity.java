@@ -1,14 +1,18 @@
 package com.example.coretech_mobile.calendar;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CalendarView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.coretech_mobile.R;
 import com.example.coretech_mobile.model.Event;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,18 +25,22 @@ public class CalendarActivity extends AppCompatActivity implements CalendarDialo
     List<Event> events;
     CalendarEventsApiCall calendarEventsApiCall;
     LocalDate choosedDate;
+    String login;
+    Button backButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendara_layout);
-
+        login = getIntent().getStringExtra("login");
         initCalendarWithEvents();
         calendarView = findViewById(R.id.calendarView);
-
+        backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(c -> finish());
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                choosedDate = LocalDate.of(year, month+1, dayOfMonth);
+                choosedDate = LocalDate.of(year, month + 1, dayOfMonth);
                 List<LocalDate> dates = events.stream()
                         .map(Event::getStartDateTime)
                         .map(LocalDate::parse)
@@ -41,9 +49,10 @@ public class CalendarActivity extends AppCompatActivity implements CalendarDialo
                     CalendarDialog calendarDialog = new CalendarDialog();
                     Bundle bundle = new Bundle();
                     bundle.putString("date", choosedDate.toString());
+                    bundle.putString("login", login);
                     calendarDialog.setArguments(bundle);
                     calendarDialog.show(getSupportFragmentManager(), "CalendarDialog");
-                }else{
+                } else {
                     CalerndarDialogBusy calerndarDialogBusy = new CalerndarDialogBusy();
                     calerndarDialogBusy.show(getSupportFragmentManager(), "CalendarDialogBusy");
                 }

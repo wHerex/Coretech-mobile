@@ -13,6 +13,7 @@
         android:theme="@style/Theme.AppCompat">
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".product.ProductActivity" />
+        <activity android:name=".dashboard.DashboardActivity" />
         <activity android:name=".auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
